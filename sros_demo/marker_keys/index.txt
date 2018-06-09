@@ -1,0 +1,8 @@
+V	280603203637Z		1000	unknown	/CN=rviz
+V	280603203652Z		1001	unknown	/CN=display_node
+V	280603203715Z		1002	unknown	/CN=transform_listener_impl
+V	280603203732Z		1003	unknown	/CN=MarkerPublisher
+V	280603204414Z		1004	unknown	/CN=static_transform_publisher
+V	280603211915Z		1005	unknown	/CN=talker
+V	280603211924Z		1006	unknown	/CN=listener
+V	280603212427Z		1007	unknown	/CN=cam2image
