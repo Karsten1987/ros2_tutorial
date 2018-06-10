@@ -1,0 +1,17 @@
+nodes:
+  listener_node:
+    topics:
+      hello_world_topic:
+        allow: s # can subscribe to chatter
+#  talker_node:
+#    topics:
+#      hello_world_topic:
+#        allow: p # can publish on chatter
+  listener_py:
+    topics:
+      '*':
+        allow: p
+  talker_py:
+    topics:
+      hello_world_topic:
+        allow: p

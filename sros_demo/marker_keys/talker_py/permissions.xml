@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://www.omg.org/spec/DDS-SECURITY/20160303/omg_shared_ca_permissions.xsd">
+  <permissions>
+    <grant name="talker_py_policies">
+      <subject_name>CN=talker_py</subject_name>
+      <validity>
+      <!--
+       Format is CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]
+                           The time zone may be specified as Z (UTC) or (+|-)hh:mm.
+                           Time zones that aren't specified are considered UTC.
+      -->
+        <not_before>2013-10-26T00:00:00</not_before>
+        <not_after>2023-10-26T22:45:30</not_after>
+      </validity>
+      <allow_rule>
+        <domains>
+          <id>71</id>
+        </domains>
+        <publish>
+          <partitions>
+            <partition>rt</partition>
+          </partitions>
+          <topics>
+            <topic>hello_world_topic</topic>
+          </topics>
+        </publish>
+        <publish>
+          <partitions>
+            <partition>rt</partition>
+          </partitions>
+          <topics>
+            <topic>parameter_events</topic>
+          </topics>
+        </publish>
+        <subscribe>
+          <partitions>
+            <partition>rt</partition>
+          </partitions>
+          <topics>
+            <topic>parameter_events</topic>
+          </topics>
+        </subscribe>
+        <subscribe>
+          <partitions>
+            <partition>rt</partition>
+          </partitions>
+          <topics>
+            <topic>clock</topic>
+          </topics>
+        </subscribe>
+        <publish>
+          <partitions>
+            <partition></partition><partition>rq/talker_py</partition>
+          </partitions>
+          <topics>
+            <topic>get_parametersRequest</topic><topic>get_parameter_typesRequest</topic><topic>set_parametersRequest</topic><topic>list_parametersRequest</topic><topic>describe_parametersRequest</topic>
+          </topics>
+        </publish>
+        <subscribe>
+          <partitions>
+            <partition></partition><partition>rr/talker_py</partition>
+          </partitions>
+          <topics>
+            <topic>get_parametersReply</topic><topic>get_parameter_typesReply</topic><topic>set_parametersReply</topic><topic>list_parametersReply</topic><topic>describe_parametersReply</topic>
+          </topics>
+        </subscribe>
+      </allow_rule>
+      <default>DENY</default>
+    </grant>
+  </permissions>
+</dds>

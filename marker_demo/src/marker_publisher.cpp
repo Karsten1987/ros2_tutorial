@@ -48,7 +48,7 @@ class TFPublisher : public rclcpp::Node
 {
 public:
   TFPublisher():
-    rclcpp::Node("marker_tf_publisher")
+    rclcpp::Node("MarkerTFPublisher")
   {}
 
   void init()
@@ -84,20 +84,10 @@ int main(int argc, char ** argv)
   auto marker_node = std::make_shared<MarkerPublisher>(node_name);
   auto tf_node = std::make_shared<TFPublisher>();
   tf_node->init();
-  // auto node = std::make_shared<rclcpp::Node>("marker_tf_node");
-  // tf2_ros::StaticTransformBroadcaster tf_pub(node);
-  //   auto transform = geometry_msgs::msg::TransformStamped();
-  //   transform.header.stamp = rclcpp::Clock().now();
-  //   transform.header.frame_id = "base_frame";
-  //   transform.child_frame_id = "marker_frame";
-  //   transform.transform.translation.x = 1.0;
-  //   tf_pub.sendTransform(transform);
-
 
   auto executor = std::make_shared<rclcpp::executors::SingleThreadedExecutor>();
   executor->add_node(marker_node);
   executor->add_node(tf_node);
-  //executor->add_node(node);
   executor->spin();
 
   return 0;
