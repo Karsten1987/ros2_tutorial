@@ -13,7 +13,7 @@ class TalkerNode : public rclcpp::Node
 {
 public:
   TalkerNode():
-    rclcpp::Node("talker_node", "hello_world_namespace")
+    rclcpp::Node("talker_node")
   {
     msg_ = std::make_shared<std_msgs::msg::String>();
     pub_ = this->create_publisher<std_msgs::msg::String>("hello_world_topic");

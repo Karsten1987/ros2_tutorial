@@ -9,7 +9,7 @@ from std_msgs.msg import String
 class Talker(Node):
 
     def __init__(self):
-        super().__init__('talker_py', namespace='hello_world_namespace')
+        super().__init__('talker_py')
         self.i = 0
         self.pub = self.create_publisher(String, 'hello_world_topic')
         timer_period = 1.0

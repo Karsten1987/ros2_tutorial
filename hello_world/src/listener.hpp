@@ -13,7 +13,7 @@ class ListenerNode : public rclcpp::Node
 {
 public:
   ListenerNode():
-    rclcpp::Node("listener_node", "hello_world_namespace")
+    rclcpp::Node("listener_node")
   {
     // use lamdba function instead of std::bind
     auto subscribe_lamdba = [&](std::shared_ptr<std_msgs::msg::String> msg) -> void {

@@ -13,7 +13,7 @@ class ListenerNode : public rclcpp::Node
 {
 public:
   ListenerNode():
-    rclcpp::Node("listener_node", "hello_world_namespace", true)
+    rclcpp::Node("listener_node", "", true)
   {
     // use of unique_ptr instead of shared_ptr
     auto subscribe_lamdba = [&](std::unique_ptr<std_msgs::msg::String> msg) -> void {

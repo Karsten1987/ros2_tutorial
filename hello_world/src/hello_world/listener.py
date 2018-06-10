@@ -9,7 +9,7 @@ from std_msgs.msg import String
 class Listener(Node):
 
     def __init__(self):
-        super().__init__('listener_py', namespace='hello_world_namespace')
+        super().__init__('listener_py')
         self.sub = self.create_subscription(String, 'hello_world_topic', self.chatter_callback)
 
     def chatter_callback(self, msg):

@@ -13,7 +13,7 @@ class TalkerNode : public rclcpp::Node
 {
 public:
   TalkerNode():
-    rclcpp::Node("talker_node", "hello_world_namespace", true)  // true for intraprocess
+    rclcpp::Node("talker_node", "", true)  // true for intraprocess
   {
     msg_ = std::make_unique<std_msgs::msg::String>();
     pub_ = this->create_publisher<std_msgs::msg::String>("hello_world_topic");
